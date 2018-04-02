@@ -1,9 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <AssemblyTitle>Legit</AssemblyTitle>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <Description>.NET Core library for reading data from git repositories.</Description>
+    <Copyright>Copyright Drew Noakes 2018</Copyright>
+    <Authors>Drew Noakes</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
+    <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1591</NoWarn>
+    <AssemblyName>Legit</AssemblyName>
+    <PackageId>Legit</PackageId>
+    <PackageTags>Git;Packfile</PackageTags>
+    <!--<PackageIconUrl>https://raw.githubusercontent.com/drewnoakes/legit/master/img/logo-128x128.png</PackageIconUrl>-->
+    <PackageProjectUrl>https://github.com/drewnoakes/legit</PackageProjectUrl>
+    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0.html</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/drewnoakes/legit.git</RepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Iconic.Zlib.Netstandard" Version="1.0.0" />
