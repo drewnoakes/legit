@@ -212,7 +212,7 @@ namespace Legit
                                 throw new EndOfStreamException();
 
                             num <<= 7;
-                            num |= (b & 0b0111_1111);
+                            num |= b & 0b0111_1111u;
                         }
 
                         return num;
