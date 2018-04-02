@@ -17,6 +17,12 @@ ProjectSection(SolutionItems) = preProject
 	appveyor.yml = appveyor.yml
 EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{1D9E7103-9EF1-4C4A-B65F-C302E2BFEE86}"
+ProjectSection(SolutionItems) = preProject
+	img\legit-logo.svg = img\legit-logo.svg
+	img\legit-logo-128x128.png = img\legit-logo-128x128.png
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -13,7 +13,7 @@
     <AssemblyName>Legit</AssemblyName>
     <PackageId>Legit</PackageId>
     <PackageTags>Git;Packfile</PackageTags>
-    <!--<PackageIconUrl>https://raw.githubusercontent.com/drewnoakes/legit/master/img/logo-128x128.png</PackageIconUrl>-->
+    <PackageIconUrl>https://raw.githubusercontent.com/drewnoakes/legit/master/img/legit-logo-128x128.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/drewnoakes/legit</PackageProjectUrl>
     <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0.html</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>

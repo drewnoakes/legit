@@ -1,3 +1,5 @@
+![legit logo](https://cdn.rawgit.com/drewnoakes/legit/master/img/legit-logo.svg)
+
 # Legit
 
 [![Build status](https://ci.appveyor.com/api/projects/status/c322rhn8t6heltx7?svg=true)](https://ci.appveyor.com/project/drewnoakes/legit)
