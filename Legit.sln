@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legit", "Legit\Legit.csproj", "{869563C4-760A-47B5-BC37-800D388EB831}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{CD556033-5CFC-4B1D-8790-E15673FC923D}"
+ProjectSection(SolutionItems) = preProject
+	docs\pack-format.txt = docs\pack-format.txt
+	docs\repository-version.txt = docs\repository-version.txt
+	LICENSE = LICENSE
+	README.md = README.md
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legit.Tests", "Legit.Tests\Legit.Tests.csproj", "{239CF313-9FB3-48C3-8FC9-255F1B1FB1D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{537AC681-B0EE-4CFC-A443-7E2BE20DD113}"
+ProjectSection(SolutionItems) = preProject
+	appveyor.yml = appveyor.yml
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{869563C4-760A-47B5-BC37-800D388EB831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869563C4-760A-47B5-BC37-800D388EB831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869563C4-760A-47B5-BC37-800D388EB831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869563C4-760A-47B5-BC37-800D388EB831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239CF313-9FB3-48C3-8FC9-255F1B1FB1D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239CF313-9FB3-48C3-8FC9-255F1B1FB1D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239CF313-9FB3-48C3-8FC9-255F1B1FB1D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239CF313-9FB3-48C3-8FC9-255F1B1FB1D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

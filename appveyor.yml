@@ -1,0 +1,16 @@
+version: 0.1.{build}
+skip_tags: true
+image: Visual Studio 2017
+configuration:
+- Release
+- Debug
+before_build:
+  appveyor-retry nuget restore
+build:
+  parallel: true
+  verbosity: minimal
+test:
+  assemblies:
+    - Legit.Tests.dll
+test_script:
+  - dotnet test .\Legit.Tests\Legit.Tests.csproj --no-build
