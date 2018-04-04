@@ -117,6 +117,7 @@ namespace Legit
         /// <returns>The parsed <see cref="ObjectId"/>.</returns>
         /// <exception cref="FormatException"><paramref name="s"/> did not contain a valid 40-character SHA-1 hash.</exception>
         [NotNull]
+        [MustUseReturnValue]
         public static ObjectId Parse(string s)
         {
             if (s == null || s.Length != Sha1CharCount || !TryParse(s, 0, out var id))
@@ -137,6 +138,7 @@ namespace Legit
         /// <param name="offset">The position within <paramref name="s"/> to start parsing from.</param>
         /// <returns>The parsed <see cref="ObjectId"/>.</returns>
         /// <exception cref="FormatException"><paramref name="s"/> did not contain a valid 40-character SHA-1 hash.</exception>
+        [MustUseReturnValue]
         public static ObjectId Parse(string s, int offset)
         {
             if (!TryParse(s, offset, out var id))
@@ -156,6 +158,7 @@ namespace Legit
         /// <exception cref="IOException">General error reading from <paramref name="stream"/>.</exception>
         /// <exception cref="EndOfStreamException"><paramref name="stream"/> ended before 20 bytes could be read.</exception>
         [NotNull]
+        [MustUseReturnValue]
         public static ObjectId Parse([NotNull] Stream stream)
         {
             var offset = 0;
