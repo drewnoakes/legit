@@ -153,7 +153,7 @@ namespace Legit
         /// <remarks>
         /// For parsing to succeed, it must be possible to read 20 bytes from <paramref name="stream"/>.
         /// </remarks>
-        /// <param name="stream">The stream read bytes from.</param>
+        /// <param name="stream">The stream to read bytes from.</param>
         /// <returns>The parsed <see cref="ObjectId"/>.</returns>
         /// <exception cref="IOException">General error reading from <paramref name="stream"/>.</exception>
         /// <exception cref="EndOfStreamException"><paramref name="stream"/> ended before 20 bytes could be read.</exception>
