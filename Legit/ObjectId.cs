@@ -13,7 +13,7 @@ namespace Legit
     /// <para>Instances are immutable and are guaranteed to contain valid, 160-bit (20-byte) SHA1 hashes.</para>
     /// <para>String forms of this object must be in lower case.</para>
     /// </remarks>
-    public sealed class ObjectId : IEquatable<ObjectId>
+    public readonly struct ObjectId : IEquatable<ObjectId>
     {
         private static readonly ThreadLocal<byte[]> _buffer = new ThreadLocal<byte[]>(() => new byte[20], trackAllValues: false);
 
@@ -79,7 +79,7 @@ namespace Legit
                 return true;
             }
 
-            objectId = null;
+            objectId = default;
             return false;
 
             uint HexToUInt32(int j)
