@@ -161,17 +161,32 @@ namespace Legit
         [MustUseReturnValue]
         public static ObjectId Parse([NotNull] Stream stream)
         {
-            var offset = 0;
             var buffer = _buffer.Value;
 
-            stream.ReadBytes(buffer, 0, 20);
+            stream.ReadBytes(buffer, offset: 0, count: 20);
 
+            return Parse(buffer, index: 0);
+        }
+
+        /// <summary>
+        /// Parses an <see cref="ObjectId"/> from <paramref name="bytes"/> at the given <paramref name="index"/>.
+        /// </summary>
+        /// <remarks>
+        /// For parsing to succeed, it must be possible to read 20 bytes from <paramref name="stream"/>.
+        /// </remarks>
+        /// <param name="bytes">The byte array to parse from.</param>
+        /// <param name="index">The index within <paramref name="bytes"/> to commence parsing from.</param>
+        /// <returns>The parsed <see cref="ObjectId"/>.</returns>
+        [NotNull]
+        [MustUseReturnValue]
+        public static ObjectId Parse([NotNull] byte[] bytes, int index)
+        {
             return new ObjectId(Read(), Read(), Read(), Read(), Read());
 
-            uint Read() => (uint)((buffer[offset++] << 24) |
-                                  (buffer[offset++] << 16) |
-                                  (buffer[offset++] << 8) |
-                                  buffer[offset++]);
+            uint Read() => (uint)((bytes[index++] << 24) |
+                                  (bytes[index++] << 16) |
+                                  (bytes[index++] << 8) |
+                                   bytes[index++]);
         }
 
         #endregion
