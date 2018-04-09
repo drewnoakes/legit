@@ -116,7 +116,6 @@ namespace Legit
         /// <param name="s">The string to try parsing from.</param>
         /// <returns>The parsed <see cref="ObjectId"/>.</returns>
         /// <exception cref="FormatException"><paramref name="s"/> did not contain a valid 40-character SHA-1 hash.</exception>
-        [NotNull]
         [MustUseReturnValue]
         public static ObjectId Parse(string s)
         {
@@ -157,7 +156,6 @@ namespace Legit
         /// <returns>The parsed <see cref="ObjectId"/>.</returns>
         /// <exception cref="IOException">General error reading from <paramref name="stream"/>.</exception>
         /// <exception cref="EndOfStreamException"><paramref name="stream"/> ended before 20 bytes could be read.</exception>
-        [NotNull]
         [MustUseReturnValue]
         public static ObjectId Parse([NotNull] Stream stream)
         {
@@ -177,7 +175,6 @@ namespace Legit
         /// <param name="bytes">The byte array to parse from.</param>
         /// <param name="index">The index within <paramref name="bytes"/> to commence parsing from.</param>
         /// <returns>The parsed <see cref="ObjectId"/>.</returns>
-        [NotNull]
         [MustUseReturnValue]
         public static ObjectId Parse([NotNull] byte[] bytes, int index)
         {
