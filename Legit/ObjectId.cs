@@ -267,9 +267,6 @@ namespace Legit
         /// <inheritdoc />
         public bool Equals(ObjectId other)
         {
-            if (other == null)
-                return false;
-
             return _i1 == other._i1 &&
                    _i2 == other._i2 &&
                    _i3 == other._i3 &&
