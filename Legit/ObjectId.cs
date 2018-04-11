@@ -170,7 +170,7 @@ namespace Legit
         /// Parses an <see cref="ObjectId"/> from <paramref name="bytes"/> at the given <paramref name="index"/>.
         /// </summary>
         /// <remarks>
-        /// For parsing to succeed, it must be possible to read 20 bytes from <paramref name="stream"/>.
+        /// For parsing to succeed, there must be 20 bytes in <paramref name="bytes"/> starting at <paramref name="index"/>.
         /// </remarks>
         /// <param name="bytes">The byte array to parse from.</param>
         /// <param name="index">The index within <paramref name="bytes"/> to commence parsing from.</param>

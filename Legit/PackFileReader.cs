@@ -6,6 +6,9 @@ using Ionic.Zlib;
 
 namespace Legit
 {
+    /// <summary>
+    /// Reads a pack file and its index, enabling iterating and searching content.
+    /// </summary>
     public sealed class PackFileReader
     {
         private const uint PackSignature = 0x5041434b; // 'P' 'A' 'C' 'K'
