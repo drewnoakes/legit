@@ -278,7 +278,7 @@ namespace Legit
         public override bool Equals(object obj) => obj is ObjectId id && Equals(id);
 
         /// <inheritdoc />
-        public override int GetHashCode() => (int)(_i1 ^ _i2 ^ _i3 ^ _i4 ^ _i5);
+        public override int GetHashCode() => (int)_i2;
 
         public static bool operator ==(ObjectId left, ObjectId right) => Equals(left, right);
         public static bool operator !=(ObjectId left, ObjectId right) => !Equals(left, right);
