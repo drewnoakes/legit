@@ -193,7 +193,7 @@ namespace Legit
         /// </summary>
         /// <param name="s">The string to validate.</param>
         /// <returns><c>true</c> if <paramref name="s"/> is a valid SHA-1 hash, otherwise <c>false</c>.</returns>
-        public static bool IsValid(string s)
+        public static bool IsValid([NotNull] string s)
         {
             if (s.Length != Sha1CharCount)
                 return false;
