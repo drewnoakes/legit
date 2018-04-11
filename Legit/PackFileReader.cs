@@ -165,7 +165,7 @@ namespace Legit
             return -1;
         }
 
-        public GitObject ReadObject(PackFileEntry entry)
+        public Content ReadObject(PackFileEntry entry)
         {
             _packStream.Position = entry.DataOffset;
 
@@ -179,7 +179,7 @@ namespace Legit
                     using (var inflate = new ZlibStream(_packStream, CompressionMode.Decompress, leaveOpen: true))
                     {
                         var buffer = inflate.ReadBytes(checked((int)entry.Size));
-                        return new GitObject((GitObjectType)entry.Type, buffer);
+                        return new Content((ContentType)entry.Type, buffer);
                     }
                 }
                 case PackFileEntryType.OffsetDelta:
@@ -237,11 +237,11 @@ namespace Legit
             }
         }
 
-        private GitObject ComputeDeltaObject(PackFileEntry baseEntry, long deltaDataOffset)
+        private Content ComputeDeltaObject(PackFileEntry baseEntry, long deltaDataOffset)
         {
             var baseObject = ReadObject(baseEntry);
 
-            return new GitObject(baseObject.Type, ApplyDelta());
+            return new Content(baseObject.Type, ApplyDelta());
 
             byte[] ApplyDelta()
             {
