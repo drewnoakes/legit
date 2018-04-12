@@ -84,7 +84,7 @@ namespace Legit
         {
             var objectId = ObjectId.Parse("03350d0fe3ad12e8b20578ddb167a84aa5dac6d1");
             Assert.True(_packFile.TryReadEntry(objectId, out var entry));
-            var obj = _packFile.ReadObject(entry);
+            var obj = _packFile.ReadContent(entry);
             Assert.Equal(ContentType.Tree, obj.Type);
             Assert.Equal(330, obj.Bytes.Length);
             /*
@@ -135,7 +135,7 @@ namespace Legit
         {
             var objectId = ObjectId.Parse("0f9cf2009d25b5f387e6c92e9b26d4a2dc174a1f");
             Assert.True(_packFile.TryReadEntry(objectId, out var entry));
-            var obj = _packFile.ReadObject(entry);
+            var obj = _packFile.ReadContent(entry);
             Assert.Equal(ContentType.Commit, obj.Type);
             Assert.Equal(239, obj.Bytes.Length);
 
@@ -176,7 +176,7 @@ namespace Legit
         {
             var objectId = ObjectId.Parse("0a84408db59739d3f98fbb1ca11af765386263b3");
             Assert.True(_packFile.TryReadEntry(objectId, out var entry));
-            var obj = _packFile.ReadObject(entry);
+            var obj = _packFile.ReadContent(entry);
             Assert.Equal(ContentType.Blob, obj.Type);
             Assert.Equal(857, obj.Bytes.Length);
 
@@ -255,7 +255,7 @@ namespace Legit
 
             Assert.True(_packFile.TryReadEntry(objectId, out var entry));
 
-            var obj = _packFile.ReadObject(entry);
+            var obj = _packFile.ReadContent(entry);
 
             Assert.Equal(ContentType.Blob, obj.Type);
             Assert.Equal(1496, obj.Bytes.Length);

@@ -168,7 +168,7 @@ namespace Legit
             return -1;
         }
 
-        public Content ReadObject(PackFileEntry entry)
+        public Content ReadContent(PackFileEntry entry)
         {
             _packStream.Position = entry.DataOffset;
 
@@ -242,7 +242,7 @@ namespace Legit
 
         private Content ComputeDeltaObject(PackFileEntry baseEntry, long deltaDataOffset)
         {
-            var baseObject = ReadObject(baseEntry);
+            var baseObject = ReadContent(baseEntry);
 
             return new Content(baseObject.Type, ApplyDelta());
 
