@@ -168,6 +168,18 @@ namespace Legit
             return -1;
         }
 
+        public bool TryReadContent(ObjectId objectId, out Content content)
+        {
+            if (!TryReadEntry(objectId, out var entry))
+            {
+                content = default;
+                return false;
+            }
+
+            content = ReadContent(entry);
+            return true;
+        }
+
         public Content ReadContent(PackFileEntry entry)
         {
             _packStream.Position = entry.DataOffset;
