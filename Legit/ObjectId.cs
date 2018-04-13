@@ -19,6 +19,7 @@ namespace Legit
 
         public static ObjectId Zero { get; } = new ObjectId(0, 0, 0, 0, 0);
 
+        private const int Sha1ByteCount = 20;
         private const int Sha1CharCount = 40;
 
         #region Parsing
@@ -249,6 +250,29 @@ namespace Legit
                 s.Append(_hexDigits[(i >>  4) & 0xF]);
                 s.Append(_hexDigits[ i        & 0xF]);
             }
+        }
+
+        public string ToString(int byteOffset, int byteCount)
+        {
+            if (byteOffset < 0)
+                throw new ArgumentOutOfRangeException(nameof(byteOffset), byteOffset, "Cannot be negative.");
+            if (byteCount < 0)
+                throw new ArgumentOutOfRangeException(nameof(byteCount), byteCount, "Cannot be negative.");
+            if (byteOffset + byteCount > Sha1ByteCount)
+                throw new ArgumentException("Offset and count go out of range.");
+
+            var s = new StringBuilder(capacity: byteCount*2);
+            var stopAt = byteOffset + byteCount;
+
+            while (byteOffset < stopAt)
+            {
+                var b = this[byteOffset];
+                s.Append(_hexDigits[(b >> 4) & 0xF]);
+                s.Append(_hexDigits[ b       & 0xF]);
+                byteOffset++;
+            }
+
+            return s.ToString();
         }
 
         /// <summary>
