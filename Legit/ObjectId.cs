@@ -275,6 +275,33 @@ namespace Legit
             return s.ToString();
         }
 
+        private byte this[int index]
+        {
+            get
+            {
+                uint j;
+                switch (index >> 2)
+                {
+                    case 0: j = _i1; break;
+                    case 1: j = _i2; break;
+                    case 2: j = _i3; break;
+                    case 3: j = _i4; break;
+                    case 4: j = _i5; break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+                switch (index%4)
+                {
+                    case 0: return (byte)(j >> 24);
+                    case 1: return (byte)(j >> 16);
+                    case 2: return (byte)(j >> 8);
+                }
+
+                return (byte)j;
+            }
+        }
+
         /// <summary>
         /// Returns the first <paramref name="maxLength"/> characters of the SHA-1 hash.
         /// </summary>
